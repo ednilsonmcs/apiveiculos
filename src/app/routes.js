@@ -8,7 +8,9 @@ router.use(function timeLog(req, res, next) {
   next();
 });
 
-router.get('/', function(req, res) {ImportacaoController.importarMarca(req,res)});
+router.get('/', async function(req, res) {res.status(200).json({message: "Hello Word!"})});
+router.get('/marca', async function(req, res) {await ImportacaoController.importarMarca(req,res)});
+router.get('/modelo', async function(req, res) {await ImportacaoController.importarModelo(req,res)});
 
 router.get('/about', function(req, res) {
   res.send('About birds');
