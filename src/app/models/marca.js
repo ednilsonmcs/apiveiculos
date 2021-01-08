@@ -3,7 +3,7 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Marca extends Model {
     static associate(models) {
-      // define association here
+      Marca.hasMany(models.Modelo, {as: "modelo"})
     }
   };
   Marca.init({
@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     freezeTableName: true,
     sequelize,
     modelName: 'Marca',
-    underscored: false,
+    underscored: true,
     tableName: "marca"
   });
   return Marca;

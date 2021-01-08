@@ -5,7 +5,7 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Modelo extends Model {
     static associate(models) {
-      Modelo.belongsTo(models.Marca, {foreignKey: "marca_id", as: "marca"});
+      Modelo.belongsTo(models.Marca, {foreignKey: "marcaId", as: "marca"});
     }
   };
   Modelo.init({
@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     freezeTableName: true,
     sequelize,
     modelName: 'Modelo',
-    underscored: false,
+    underscored: true,
     tableName: "modelo"
   });
   return Modelo;
