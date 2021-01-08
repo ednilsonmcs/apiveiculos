@@ -16,8 +16,11 @@ module.exports = (sequelize, DataTypes) => {
   Modelo.init({
     nome: DataTypes.STRING
   }, {
+    freezeTableName: true,
     sequelize,
     modelName: 'Modelo',
+    underscored: false,
+    tableName: "modelo"
   });
   return Modelo;
 };
