@@ -9,8 +9,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nome: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
+      tipo: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },      
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
